@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership</title>
+    <link rel="stylesheet" href="css/membership.css">
+</head>
+<body>
+    <header>
+        <h1>Membership</h1>
+        <nav>
+            <a href="index.html" class="navbar-link home-button">Home</a>
+            
+        </nav>
+    </header>
+
+    <main>
+        <section id="membership">
+            <h2>Become a Member</h2>
+            <p>Join our community and unlock exclusive benefits!</p>
+
+            <h3>Premium Membership</h3>
+            <p>Price: $20/month</p>
+            <p>Benefits:</p>
+            <ul>
+                <li>Access to premium content</li>
+                <li>Discounts on events</li>
+                <li>Community forums access</li>
+            </ul>
+
+            <button class="buy-button" onclick="buyMembership()">Buy Premium Membership</button>
+        </section>
+    </main>
+
+    <script>
+        function buyMembership() {
+            // Here you can implement the logic for purchasing the membership
+            alert("Redirecting to payment gateway...");
+            // For example, you might redirect to a payment page:
+            // window.location.href = "payment.html"; // Uncomment and set the correct payment URL
+        }
+    </script>
+</body>
+</html>

@@ -185,23 +185,6 @@ body.active { overflow: hidden; }
 
 .h5 { font-size: var(--fs-6); }
 
-.newsletter-form {
-  position: relative;
-  max-width: 400px;
-}
-
-.newsletter-form .email-field {
-  background-color: var(--cultured);
-  color: inherit;
-  padding: 14px 20px;
-  padding-inline-end: 140px;
-  border-radius: var(--radius-pill);
-}
-
-.newsletter-form .email-field:focus { background-color: var(--gainsboro); }
-
-.newsletter-form .email-field::placeholder { color: var(--eerie-black_60); }
-
 .newsletter-form .btn {
   position: absolute;
   top: 0;
@@ -405,8 +388,30 @@ body.active { overflow: hidden; }
   text-align: right;
   font-size: var(--fs-6);
   font-weight: var(--fw-500);
-  padding: 5px;
+  padding: 10px;
 }
+.navbar-button {
+  display: inline-block; /* Make the link behave like a block element */
+  background-color: grey; /* Blue background */
+  color: white; /* White text */
+  text-align: center; /* Center the text */
+  padding: 15px 30px; /* Vertical and horizontal padding */
+  border-radius: 25px; /* Rounded corners */
+  text-decoration: none; /* Remove underline */
+  font-size: 16px; /* Font size */
+  transition: background-color 0.3s, transform 0.2s; /* Transition effects */
+  cursor: pointer; /* Pointer cursor on hover */
+}
+
+.navbar-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: scale(1.05); /* Slightly larger on hover */
+}
+
+.navbar-button:active {
+  transform: scale(0.95); /* Slightly smaller when clicked */
+}
+
 
 
 

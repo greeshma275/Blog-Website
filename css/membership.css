@@ -1,0 +1,99 @@
+/* Reset some default browser styles */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-image: url('assets/images/recommended-1.jpg')
+    
+}
+
+header {
+    background-color: cornflowerblue; /* Dark background for header */
+    color: #f8f9fa; /* Light text color */
+    padding: 15px 20px; /* Increased padding for the header */
+    box-shadow: orange /* Shadow for depth */
+}
+
+h1 {
+    margin: 0; /* Remove default margin */
+    font-size: 2.5em; /* Larger font size for the main heading */
+}
+
+h2 {
+    color: #343a40; /* Dark color for subheadings */
+    font-size: 2em; /* Larger font size */
+}
+
+nav {
+    margin-top: 10px; /* Space above navigation */
+}
+
+.navbar-link {
+    color: #f8f9fa; /* Light links */
+    text-decoration: none; /* Remove underline */
+    margin-right: 20px; /* Space between links */
+    padding: 12px 15px; /* Padding around links */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.2s; /* Transition for hover effects */
+}
+
+.home-button {
+    background-color:rgb(57, 57, 57); /* Blue background for Home button */
+}
+
+.navbar-link:hover {
+    background-color:gray; /* Darker blue on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+main {
+    padding: 20px; /* Padding for the main content */
+}
+
+#membership {
+    max-width: 800px; /* Limit width of membership section */
+    margin: 40px auto; /* Center the section with more margin */
+    padding: 30px; /* Padding for membership section */
+    background-color: #ffffff; /* White background for membership section */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    border-left: 6px solid #007bff; /* Blue left border for accent */
+}
+
+h3 {
+    margin-top: 20px; /* Space above h3 headings */
+    color: #007bff; /* Blue color for h3 */
+    font-size: 1.5em; /* Increased font size for h3 */
+}
+
+ul {
+    margin-left: 20px; /* Indent list */
+    list-style-type: disc; /* Bullet points for the list */
+}
+
+li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.buy-button {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    padding: 15px 25px; /* Padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    font-size: 18px; /* Increased font size */
+    transition: background-color 0.3s, transform 0.2s; /* Transition for hover effect */
+    margin-top: 20px; /* Space above the button */
+    display: inline-block; /* Allow margin to apply correctly */
+}
+
+.buy-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slightly larger on hover */
+}
+
+/* Optional: Add spacing for the last item in the section */
+#membership p:last-child {
+    margin-bottom: 20px; /* Space after the last paragraph */
+}
