@@ -2,7 +2,7 @@
 /* Home button styles */
 .home-button {
     display: inline-block; /* Make it inline-block to adjust padding */
-    background-color: black; /* Black background */
+    background-color: rgb(147, 162, 244); /* Black background */
     color: white; /* White text color */
     padding: 10px 15px; /* Padding for button */
     border-radius: 8px; /* Rounded corners */
@@ -13,7 +13,7 @@
 
 /* Hover effect for the home button */
 .home-button:hover {
-    background-color: #444; /* Darker shade on hover */
+    background-color: #9d88f9; /* Darker shade on hover */
 }
 
 body {
@@ -24,12 +24,17 @@ body {
 }
 
 header {
+    background-color: #f6c8d3; /* More vibrant background for header */
+    color: #f8f9fa; /* Light text color */
+    padding: 10px 10px; /* Increased padding for the header */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for depth */
     text-align: center;
     margin-bottom: 30px;
 }
 
 h1 {
-    color: #333;
+    color: #f9f8f8;
+    text-decoration: double;
 }
 
 .navbar-link {
@@ -40,7 +45,6 @@ h1 {
 
 .navbar-link:hover {
     opacity: 0.5;
-    l
 }
 
 /* Main section styling */

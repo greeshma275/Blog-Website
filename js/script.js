@@ -57,3 +57,25 @@ const toggleSearchBar = function () {
 }
 
 addEventOnElem(searchTogglers, "click", toggleSearchBar);
+document.addEventListener('DOMContentLoaded', function () {
+  const commentForm = document.getElementById('commentForm');
+  const commentInput = document.getElementById('commentInput');
+  const commentList = document.getElementById('commentList');
+
+  commentForm.addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the form from submitting traditionally
+
+    const commentText = commentInput.value.trim();
+    if (commentText) {
+      // Create a new list item for the comment
+      const li = document.createElement('li');
+      li.textContent = commentText;
+      
+      // Append the new comment to the comment list
+      commentList.appendChild(li);
+      
+      // Clear the input field
+      commentInput.value = '';
+    }
+  });
+});

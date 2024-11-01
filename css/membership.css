@@ -3,20 +3,23 @@ body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background-image: url('assets/images/recommended-1.jpg')
-    
+    background: linear-gradient(to right, #f5edeb, #e2dfdc); /* Gradient background */
+    background-size: cover; /* Cover the entire body */
 }
 
 header {
-    background-color: cornflowerblue; /* Dark background for header */
+    background-color: #fbc9d5; /* More vibrant background for header */
     color: #f8f9fa; /* Light text color */
     padding: 15px 20px; /* Increased padding for the header */
-    box-shadow: orange /* Shadow for depth */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Deeper shadow for depth */
+    text-align: center;
 }
 
 h1 {
-    margin: 0; /* Remove default margin */
+    margin: 10; /* Remove default margin */
     font-size: 2.5em; /* Larger font size for the main heading */
+    font-weight: bold; /* Bold font for emphasis */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
 }
 
 h2 {
@@ -38,12 +41,13 @@ nav {
 }
 
 .home-button {
-    background-color:rgb(57, 57, 57); /* Blue background for Home button */
+    background-color: rgb(125, 168, 247); /* Darker color for Home button */
+    align-items:flex-start;
 }
 
 .navbar-link:hover {
-    background-color:gray; /* Darker blue on hover */
-    transform: scale(1.05); /* Slightly larger on hover */
+    background-color: #8eb8f4; /* Vibrant color on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
 }
 
 main {
@@ -56,14 +60,16 @@ main {
     padding: 30px; /* Padding for membership section */
     background-color: #ffffff; /* White background for membership section */
     border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
-    border-left: 6px solid #007bff; /* Blue left border for accent */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); /* Subtle shadow for depth */
+    border-left: 6px solid #9fcdff; /* Blue left border for accent */
+    border-right: 6px solid #9fcdff
 }
 
 h3 {
     margin-top: 20px; /* Space above h3 headings */
-    color: #007bff; /* Blue color for h3 */
+    color: #88c1fe; /* Blue color for h3 */
     font-size: 1.5em; /* Increased font size for h3 */
+    text-decoration:double /* Underline for emphasis */
 }
 
 ul {
@@ -76,7 +82,7 @@ li {
 }
 
 .buy-button {
-    background-color: #28a745; /* Green background */
+    background-color: #ffcc00; /* Bright yellow background */
     color: white; /* White text */
     padding: 15px 25px; /* Padding */
     border: none; /* Remove border */
@@ -89,8 +95,8 @@ li {
 }
 
 .buy-button:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform: scale(1.05); /* Slightly larger on hover */
+    background-color: #f9c860; /* Darker yellow on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
 }
 
 /* Optional: Add spacing for the last item in the section */
