@@ -32,26 +32,9 @@ Prerequisites
 Web browser (e.g., Chrome, Firefox).
 Basic understanding of HTML, CSS, and JavaScript if modifications are needed.
 
-
-Installation
-
-
 Clone the repository:
 
 Open the project directory and launch the homepage (index.html) in a browser to get started.
-Folder Structure
-bash
-Copy code
-/blog-website
-├── index.html            # Main page for displaying blog posts
-├── create.html           # Form page for creating blog posts
-├── styles/
-│   └── main.css          # CSS file for styling the website
-├── scripts/
-│   └── main.js           # JavaScript for interactive features
-├── assets/
-│   └── images/           # Folder to store images for blog posts
-
 
 Future Enhancements
 Enable user authentication for personalized experiences.
