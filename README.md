@@ -43,4 +43,5 @@ Advanced search and filtering capabilities.
 Enhanced commenting and rating features for blog posts.
 
 Thank you for exploring the Blog Website. We hope it serves as a creative platform for sharing your thoughts and ideas!
+
 [BLOG-WEBSITE.pdf](https://github.com/user-attachments/files/17775949/BLOG-WEBSITE.pdf)
