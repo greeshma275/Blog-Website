@@ -1,0 +1,89 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  /* Container styling for the form */
+  .container {
+    width: 60%;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff; /* White background */
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Slight shadow for depth */
+    margin-top: 30px;
+  }
+  
+  /* Form header */
+  h1 {
+    text-align: center;
+    color: #6d6875; /* Soft pastel purple */
+    font-size: 1.8em;
+  }
+  
+  /* Form styling */
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-top: 15px;
+    color: #3d405b; /* Muted navy color */
+    font-weight: bold;
+  }
+  
+  /* Input fields */
+  input, textarea {
+    padding: 12px;
+    margin-top: 6px;
+    font-size: 1em;
+    border-radius: 6px;
+    border: 1px solid #c9ada7; /* Light pastel border */
+    background-color: #f8edeb; /* Soft pastel pinkish background */
+    color: #3d405b; /* Text color matching label */
+  }
+  
+  /* Focus effects for input fields */
+  input:focus, textarea:focus {
+    outline: none;
+    border: 1px solid #fdd6de; /* Darker pastel border on focus */
+  }
+  
+  /* Button styling */
+  button {
+    margin-top: 20px;
+    padding: 12px 20px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 6px;
+    background-color: #93a2f4; /* Match with home button color */
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for button */
+  button:hover {
+    background-color: #9d88f9; /* Darker shade matching hover effect */
+    transform: scale(1.05); /* Slightly larger on hover */
+  }
+  
+  /* File input styling */
+  input[type="file"] {
+    padding: 8px;
+    background-color: #f8edeb; /* Soft pastel pinkish background */
+    border-radius: 6px;
+    border: 1px solid #c9ada7;
+  }
+  
+  /* Responsiveness */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  }
+  

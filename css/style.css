@@ -206,6 +206,7 @@ body.active { overflow: hidden; }
   margin-block-end: 15px;
 }
 
+
 .avatar-list {
   display: flex;
   flex-direction: row-reverse;
@@ -1036,4 +1037,24 @@ body.active { overflow: hidden; }
 #commentInput {
   flex-grow: 1;
   padding: 5px;
+}
+
+/* Styles to make only the created post smaller */
+.created-post {
+  max-width: 200px; /* Smaller width for the created post */
+  padding: 10px;
+}
+
+.created-post .card-banner {
+  --width: 150;
+  --height: 175;
+}
+
+.created-post .card-title {
+  font-size: 1em;
+}
+
+.created-post .card-meta,
+.created-post .card-text {
+  font-size: 0.85em;
 }
