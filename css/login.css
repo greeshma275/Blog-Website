@@ -1,0 +1,106 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f8ff; /* Light pastel blue background */
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the Form */
+.form-container {
+    background-color: #ffffff; /* White background for the form */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Heading Style */
+h1 {
+    font-size: 2rem;
+    color: #ffb6c1; /* Pastel pink for the heading */
+    margin-bottom: 20px;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Label Styling */
+label {
+    display: block;
+    font-size: 1rem;
+    color: #ff69b4; /* Light pink label color */
+    margin-bottom: 5px;
+}
+
+/* Input Fields Styling */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #d3d3d3;
+    background-color: #fce4ec; /* Pastel pink background for input fields */
+    font-size: 1rem;
+}
+
+/* Button Styling */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ffb6c1; /* Soft pastel pink */
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff69b4; /* Darker pastel pink when hovered */
+}
+
+/* Link Styling */
+a {
+    color: #ff69b4; /* Soft pink link */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ff1493; /* Slightly darker pink on hover */
+}
+
+/* Additional Small Text Styling */
+p {
+    margin-top: 15px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 500px) {
+    .form-container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    input[type="text"], input[type="password"], button {
+        font-size: 1rem;
+    }
+}

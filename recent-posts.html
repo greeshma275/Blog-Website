@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recent Posts</title>
     <link rel="stylesheet" href="css/recent-posts.css">
+    <script src="js/script.js"></script>
+
 </head>
 <body>
     <header>
@@ -63,5 +65,35 @@
             </article>
         </section>
     </main>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const posts = JSON.parse(localStorage.getItem("posts")) || [];
+          const section = document.querySelector(".section");
+      
+          // Clear existing posts (if any)
+          section.innerHTML = "";
+      
+          // Reverse the posts array so newer posts appear first
+          posts.reverse();
+      
+          // Dynamically create articles for each post
+          posts.forEach(post => {
+            const article = document.createElement("article");
+            article.classList.add("article");
+      
+            article.innerHTML = `
+              <img src="${post.imageUrl || './assets/images/default-image.jpg'}" alt="Image for Post">
+              <h2>${post.title}</h2>
+              <p class="article-info">Published on: ${post.date} | Author: ${post.author}</p>
+              <p>${post.description}</p>
+            `;
+      
+            section.appendChild(article);
+          });
+        });
+      </script>
+      
+      
+      
 </body>
 </html>

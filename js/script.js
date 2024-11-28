@@ -104,38 +104,150 @@ function savePostToLocalStorage(title, date, author, description, imageUrl) {
     description,
     imageUrl
   };
-  localStorage.setItem("post", JSON.stringify(post));
-  window.location.href = "index.html"; // Redirect to home page
+
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
+  posts.push(post);
+  localStorage.setItem("posts", JSON.stringify(posts));
+  window.location.href = "index.html";
 }
 
-window.onload = function() {
-  const post = JSON.parse(localStorage.getItem("post"));
+window.onload = function () {
+  const posts = JSON.parse(localStorage.getItem("posts")) || [];
   const postContainer = document.querySelector('.has-scrollbar');
 
-  if (post) {
-    postContainer.innerHTML = `
-      <li class="scrollbar-item created-post"> <!-- Add specific class here -->
-        <div class="blog-card">
-          <figure class="card-banner img-holder" style="--width: 150; --height: 175;">
-            ${post.imageUrl ? 
-              `<img src="${post.imageUrl}" width="150" height="175" loading="lazy" alt="Post image" class="img-cover">` : 
-              `<img src="./assets/images/default-image.jpg" width="150" height="175" loading="lazy" alt="Default image" class="img-cover">`}
-          </figure>
-          <div class="card-content">
-            <h3 class="h4">
-              <a href="#" class="card-title hover:underline">${post.title}</a>
-            </h3>
-            <p class="card-meta">
-              <strong class="author">${post.author}</strong> | ${post.date}
-            </p>
-            <p class="card-text">
-              ${post.description}
-            </p>
-          </div>
+  // Clear the container
+  postContainer.innerHTML = '';
+
+  // Iterate through the posts in reverse order (newest first)
+  posts.reverse().forEach(post => { // Reverse posts for display
+    const postElement = document.createElement('li');
+    postElement.classList.add('scrollbar-item', 'created-post');
+    postElement.innerHTML = `
+      <div class="blog-card">
+        <figure class="card-banner img-holder" style="--width: 150; --height: 175;">
+          ${post.imageUrl ? 
+            `<img src="${post.imageUrl}" width="150" height="175" loading="lazy" alt="Post image" class="img-cover">` : 
+            `<img src="./assets/images/default-image.jpg" width="150" height="175" loading="lazy" alt="Default image" class="img-cover">`}
+        </figure>
+        <div class="card-content">
+          <h3 class="h4">
+            <a href="#" class="card-title hover:underline">${post.title}</a>
+          </h3>
+          <p class="card-meta">
+            <strong class="author">${post.author}</strong> | ${post.date}
+          </p>
+          <p class="card-text">
+            ${post.description}
+          </p>
         </div>
-      </li>
+      </div>
     `;
-    
-    localStorage.removeItem("post");
-  }
+
+    postContainer.appendChild(postElement);
+  });
 };
+
+
+
+
+// posts.js
+
+// Sample posts array (in a real app, this could come from localStorage or a backend)
+const posts = [
+    { id: 1, title: 'First Post', content: 'This is the first post' },
+    { id: 2, title: 'Second Post', content: 'This is the second post' },
+    { id: 3, title: 'Third Post', content: 'This is the third post' }
+];
+
+/* Render posts on page load
+function renderPosts() {
+    const postsContainer = document.getElementById('postsContainer');
+    postsContainer.innerHTML = ''; // Clear existing posts
+    
+    posts.forEach(post => {
+        const postElement = document.createElement('div');
+        postElement.classList.add('post');
+        postElement.setAttribute('data-id', post.id);
+        postElement.innerHTML = `
+            <h2>${post.title}</h2>
+            <p>${post.content}</p>
+        `;
+        
+        // Add event listener for right-click (contextmenu)
+        postElement.addEventListener('contextmenu', function(e) {
+            e.preventDefault(); // Prevent default right-click menu
+            showDeleteOption(postElement, post.id);
+        });
+
+        postsContainer.appendChild(postElement);
+    });
+}*/
+
+document.addEventListener('DOMContentLoaded', function () {
+  const postsContainer = document.getElementById('postsContainer');
+  const storedPosts = JSON.parse(localStorage.getItem('posts')) || []; // Load stored posts
+  let posts = [...storedPosts];
+
+  // Function to render posts
+  function renderPosts() {
+    postsContainer.innerHTML = ''; // Clear existing posts
+    posts.forEach((post, index) => {
+      const postElement = document.createElement('div');
+      postElement.classList.add('post');
+      postElement.setAttribute('data-id', index);
+      postElement.innerHTML = `
+        <h2>${post.title}</h2>
+        <p>${post.content}</p>
+        <button class="delete-button" data-id="${index}">Delete</button>
+      `;
+
+      postsContainer.appendChild(postElement);
+    });
+
+    // Attach event listeners to all delete buttons
+    const deleteButtons = document.querySelectorAll('.delete-button');
+    deleteButtons.forEach((button) => {
+      button.addEventListener('click', function (e) {
+        const postId = parseInt(e.target.getAttribute('data-id'), 10);
+        deletePost(postId);
+      });
+    });
+  }
+
+  // Function to delete a post
+  function deletePost(index) {
+    posts.splice(index, 1); // Remove post from the array
+    localStorage.setItem('posts', JSON.stringify(posts)); // Update localStorage
+    renderPosts(); // Re-render posts
+  }
+
+  // Function to add a new post
+  function addNewPost(title, content) {
+    const newPost = { title, content };
+    posts.unshift(newPost); // Add to the beginning of the array
+    localStorage.setItem('posts', JSON.stringify(posts)); // Update localStorage
+    renderPosts(); // Re-render posts
+  }
+  
+
+  // Example form submission for adding a post (optional)
+  const addPostForm = document.getElementById('addPostForm');
+  if (addPostForm) {
+    addPostForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const title = document.getElementById('postTitle').value.trim();
+      const content = document.getElementById('postContent').value.trim();
+      if (title && content) {
+        addNewPost(title, content);
+        addPostForm.reset();
+      }
+    });
+  }
+  
+
+  // Initial render
+  renderPosts();
+});
+
+
+  

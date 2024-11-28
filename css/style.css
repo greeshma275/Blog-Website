@@ -269,7 +269,10 @@ body.active { overflow: hidden; }
   gap: 30px;
 }
 
-
+.blog-card:hover{
+  transform: scale(1.05); /* Slightly increase the size */
+    opacity: 0.9; /* Change opacity on hover */
+}
 
 
 
