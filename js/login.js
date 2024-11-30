@@ -2,22 +2,23 @@
 
 // login.js
 
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-
-    // Get username and password
+document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent form submission
+    
+    // Get input values
     const username = document.getElementById('username').value;
     const password = document.getElementById('password').value;
 
-    // Dummy check: In real-world, you'd verify these with your back-end or saved data
-    if (username === "user" && password === "password") {
-        // Store login status and username in localStorage
-        localStorage.setItem('isLoggedIn', 'true');
-        localStorage.setItem('username', username);  // Store the logged-in username
+    // Retrieve stored credentials from localStorage
+    const storedUsername = localStorage.getItem('username');
+    const storedPassword = localStorage.getItem('password');
 
-        // Redirect to index.html or create.html
+    // Check if the entered credentials match the stored ones
+    if (username === storedUsername && password === storedPassword) {
+        // If credentials match, redirect to the homepage or user dashboard
         window.location.href = 'index.html';
     } else {
-        alert('Incorrect username or password');
+        // If credentials don't match, show an error message
+        alert("Invalid username or password. Please try again.");
     }
 });
